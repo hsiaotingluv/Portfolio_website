@@ -673,8 +673,6 @@ header.sticky .nav-bar{
 
 .portfolio-list .img-card .overlay{
 	transition: 1s ease;
-	width: 100%;
-	height: 100%;
 }
 
 .portfolio-list .img-card:hover .overlay{
@@ -695,6 +693,7 @@ header.sticky .nav-bar{
 	transform: translateY(20px);
 	opacity: 0;
 	transition: .5s ease;
+	
 }
 
 .portfolio-list .img-card:hover .info{
@@ -703,7 +702,7 @@ header.sticky .nav-bar{
 }
 
 .portfolio-list .img-card .info h3{
-	font-size: 1.2em;
+	font-size: 1.5em;
 }
 
 .portfolio-list .img-card img{
@@ -712,7 +711,7 @@ header.sticky .nav-bar{
 	object-fit: cover;
 }
 
-.portfolio-model{
+.portfolio-modal{
 	z-index: 999999;
 	position: fixed;
 	width: 100%;
@@ -726,7 +725,12 @@ header.sticky .nav-bar{
 	transition: .3s ease;
 }
 
-.portfolio-model-body{
+.portfolio-modal.active{
+	visibility: visible;
+	opacity: 1;
+}
+
+.portfolio-modal-body{
 	position: relative;
 	background: var(--modal-bg-color);
 	max-width: 600px;
@@ -734,6 +738,12 @@ header.sticky .nav-bar{
 	padding: 40px;
 	border-radius: 10px;
 	box-shadow: var(--box-shadow);
+	transform: translateY(-50px);
+	transition: .5s ease;
+}
+
+.portfolio-modal.active .portfolio-modal-body{
+	transform: translateY(0);
 }
 
 .portfolio-close-btn{
@@ -744,11 +754,11 @@ header.sticky .nav-bar{
 	cursor: pointer;
 }
 
-.portfolio-model-body h3{
+.portfolio-modal-body h3{
 	font-size: 1.5em;
 }
 
-.portfolio-model-body img{
+.portfolio-modal-body img{
 	width: 100%;
 	margin: 20px 0;
 	border-radius: 10px;
